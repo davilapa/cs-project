@@ -4,8 +4,9 @@ import DynamicInput from "./DynamicInput";
 import DynamicCheckbox from "./DynamicCheckbox";
 import DynamicSelect from "./DynamicSelect";
 import DynamicButton from "./DynamicButton";
+import { Component } from "../types/componentProps.types";
 
-export default function DynamicForm({ components }) {
+export default function DynamicForm({ components }: { components: Component[]}) {
   const methods = useForm();
   const {
     register,

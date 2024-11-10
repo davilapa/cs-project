@@ -3,7 +3,16 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
+  InputProps,
 } from "@chakra-ui/react";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+
+interface DynamicInputProps extends InputProps {
+  id: string;
+  label: string;
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors<FieldValues>
+}
 
 export default function DynamicInput({
   id,
@@ -12,16 +21,16 @@ export default function DynamicInput({
   isRequired,
   register,
   errors,
-}: any) {
+}: DynamicInputProps) {
   return (
-    <FormControl isRequired={isRequired} isInvalid={errors[id]}>
+    <FormControl isRequired={isRequired} isInvalid={Boolean(errors[id])}>
       <FormLabel htmlFor={id}>{label}</FormLabel>
       <Input
         id={id}
         placeholder={placeholder}
         {...register(id, { required: isRequired })}
       />
-      <FormErrorMessage>{errors[id] && errors[id].message}</FormErrorMessage>
+      <FormErrorMessage>{errors[id] && String(errors[id].message)}</FormErrorMessage>
     </FormControl>
   );
 }

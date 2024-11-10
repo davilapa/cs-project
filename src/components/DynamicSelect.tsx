@@ -3,7 +3,18 @@ import {
   FormLabel,
   Select,
   FormErrorMessage,
+  SelectProps,
 } from "@chakra-ui/react";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import { Option } from "../types/componentProps.types";
+
+interface DynamicSelectProps extends SelectProps {
+  id: string;
+  label: string;
+  options: Option[],
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors<FieldValues>
+}
 
 export default function DynamicSelect({
   id,
@@ -13,9 +24,9 @@ export default function DynamicSelect({
   isRequired,
   register,
   errors,
-}: any) {
+}: DynamicSelectProps) {
   return (
-    <FormControl isRequired={isRequired} isInvalid={errors[id]}>
+    <FormControl isRequired={isRequired} isInvalid={Boolean(errors[id])}>
       <FormLabel htmlFor={id}>{label}</FormLabel>
       <Select
         id={id}
@@ -28,7 +39,7 @@ export default function DynamicSelect({
           </option>
         ))}
       </Select>
-      <FormErrorMessage>{errors[id] && errors[id].message}</FormErrorMessage>
+      <FormErrorMessage>{errors[id] && String(errors[id].message)}</FormErrorMessage>
     </FormControl>
   );
 }

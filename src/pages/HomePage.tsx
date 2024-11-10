@@ -1,24 +1,10 @@
-import { Box, VStack, Heading, Spinner, Flex } from "@chakra-ui/react";
+import { Box, VStack, Heading } from "@chakra-ui/react";
 import DynamicForm from "../components/DynamicForm";
 import { useFormConfig } from "../hooks/useFormConfig";
+import { HomeLoading } from "../components/HomeLoading";
 
 export default function HomePage() {
-  const { formConfig } = useFormConfig();
-
-  if (!formConfig) {
-    return (
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        width="100%"
-        maxWidth="500px"
-        p={4}
-      >
-        <Spinner></Spinner>
-        Loading...
-      </Flex>
-    );
-  }
+  const { formConfig, isLoading } = useFormConfig();
 
   return (
     <Box width="100%" maxWidth="500px" p={4}>
@@ -26,6 +12,7 @@ export default function HomePage() {
         <Heading as="h1" size="xl">
           Formulario Dinámico
         </Heading>
+        {isLoading && <HomeLoading />}
         <DynamicForm components={formConfig} />
       </VStack>
     </Box>

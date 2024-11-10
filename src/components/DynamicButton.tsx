@@ -1,10 +1,10 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { useFormContext } from "react-hook-form";
+import { FieldValues, useFormContext } from "react-hook-form";
 
 interface DynamicButtonProps extends ButtonProps {
   id: string;
   label: string;
-  onClick?: (values: any) => void;
+  onClick: (values: FieldValues) => void;
 }
 
 export default function DynamicButton({
@@ -20,7 +20,7 @@ export default function DynamicButton({
   };
 
   return (
-    <Button id={id} onClick={handleClick} {...props}>
+    <Button id={id} onClick={handleClick} colorScheme="blue" {...props}>
       {label}
     </Button>
   );

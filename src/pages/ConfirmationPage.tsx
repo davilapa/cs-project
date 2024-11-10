@@ -1,13 +1,15 @@
 import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ConfirmationNotData } from "../components/ConfirmationNotData";
+import { useConfirmDataStore } from "../store/useConfirmDataStore";
 
 export default function ConfirmationPage() {
-  const location = useLocation();
   const navigate = useNavigate();
-  const formData = location.state?.formData;
+  const confirmData = useConfirmDataStore((state ) => state.confirmData);
 
-  if (!formData) {
-    return <Box>No hay información de formulario disponile</Box>;
+
+  if (!confirmData) {
+    return<ConfirmationNotData />;
   }
 
   return (
@@ -18,7 +20,7 @@ export default function ConfirmationPage() {
         </Heading>
         <Text>Su información ha sido guardada exitosamente.</Text>
         <VStack align="stretch" spacing={2}>
-          {Object.entries(formData).map(([key, value]) => (
+          {Object.entries(confirmData).map(([key, value]) => (
             <Text key={key}>
               <strong>{key}:</strong> {value.toString()}
             </Text>
