@@ -1,50 +1,83 @@
 # CS Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This a CS Project
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [**Vite.js**](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with syntax for types.
+- [**Chakra UI**](https://chakra-ui.com/) - Chakra UI: Simple, Modular and Accessible UI Components for your React Applications.
+- [**React Router DOM**](https://reactrouter.com/) - A JavaScript framework that lets us handle client and server-side routing in React applications.
+- [**Zustand**](https://zustand-demo.pmnd.rs/) - A small, fast, and scalable bearbones state management solution.
 
-## Expanding the ESLint configuration
+## Files Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── node_modules (.gitignore)
+├── public
+├── src
+│   ├── assets
+│   ├── components
+│   │   ├── ConfirmNotData.tsx
+│   │   ├── DynamicButton.tsx
+│   │   ├── DynamicCheckbox.tsx
+│   │   ├── DynamicForm.tsx
+│   │   ├── DynamicInput.tsx
+│   │   ├── DynamicSelect.tsx
+│   │   ├── HomeLoading.tsx
+│   ├── hooks
+│   │   └── useFormConfig.tsx
+│   │   ├── ...
+│   ├── pages
+│   │   ├── ConfirmationPage.tsx
+│   │   └── HomePage.tsx
+│   ├── services
+│   │   └── api.ts
+│   ├── store
+│   │   └── useConfirmationDataStore.ts
+│   └── App.css
+│   └── App.tsx
+│   └── index.css
+│   └── main.tsx
+│   └── vite-env.d.ts
+├── .gitignore
+├── eslint.config.js
+├── index.html
+└── package-lock.json
+├── package.json
+└── README.md
+└── tsconfig.app.json
+└── tsconfig.json
+└── tsconfig.node.json
+└── vite.config.ts
+├── vitest.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Prerequisites:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- [Node.js 18+](https://nodejs.org/en/).
+- [Git](https://git-scm.com/).
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. [Fork](https://github.com/davilapa/pokedex-app/fork) or [Clone](https://github.com/davilapa/pokedex-app)
+   this repository and clone it locally
+
+```bash
+git clone git@github.com:<your_username>/pokedex-app.git
 ```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+### Coverage
+![coverage](coverage.png)
