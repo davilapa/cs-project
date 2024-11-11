@@ -1,6 +1,6 @@
 # CS Project
 
-This a CS Project
+This a CS Project. [Go to Action!](https://cs-project-two.vercel.app/)
 
 ## Stack
 
