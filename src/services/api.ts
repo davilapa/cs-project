@@ -1,3 +1,5 @@
+import { Component } from "../types/componentProps.types";
+
 export async function fetchFormConfig() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return {
@@ -50,6 +52,6 @@ export async function fetchFormConfig() {
           onClick: "handleSave",
         },
       },
-    ],
+    ] as Component[],
   };
 }
