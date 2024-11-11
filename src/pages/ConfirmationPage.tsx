@@ -7,7 +7,6 @@ export default function ConfirmationPage() {
   const navigate = useNavigate();
   const confirmData = useConfirmDataStore((state ) => state.confirmData);
 
-
   if (!confirmData) {
     return<ConfirmationNotData />;
   }

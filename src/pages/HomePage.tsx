@@ -12,8 +12,7 @@ export default function HomePage() {
         <Heading as="h1" size="xl">
           Formulario Dinámico
         </Heading>
-        {isLoading && <HomeLoading />}
-        <DynamicForm components={formConfig} />
+        {isLoading ? <HomeLoading /> : <DynamicForm components={formConfig} />}
       </VStack>
     </Box>
   );

@@ -10,7 +10,6 @@ export const HomeLoading = () => {
       p={4}
     >
       <Spinner></Spinner>
-      Loading...
     </Flex>
   );
 };
