@@ -14,20 +14,20 @@ export async function fetchFormConfig() {
         },
       },
       {
-        type: "Checkbox",
-        props: {
-          id: "subscribe",
-          label: "Suscribirse al boletín",
-          isChecked: false,
-        },
-      },
-      {
         type: "Input",
         props: {
           id: "lastName",
           label: "Apellido",
           placeholder: "Ingrese su apellido",
-          isRequired: true,
+          isRequired: false,
+        },
+      },
+      {
+        type: "Checkbox",
+        props: {
+          id: "subscribe",
+          label: "Suscribirse al boletín",
+          isChecked: false,
         },
       },
       {

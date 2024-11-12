@@ -28,7 +28,7 @@ export default function DynamicInput({
       <Input
         id={id}
         placeholder={placeholder}
-        {...register(id, { required: isRequired })}
+        {...register(id, { required: isRequired && `${label} is requerido` })}
       />
       <FormErrorMessage>{errors[id] && String(errors[id].message)}</FormErrorMessage>
     </FormControl>

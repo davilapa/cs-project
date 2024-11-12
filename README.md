@@ -8,10 +8,12 @@ This a CS Project. [Go to Action!](https://cs-project-two.vercel.app/)
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript with syntax for types.
 - [**Chakra UI**](https://chakra-ui.com/) - Chakra UI: Simple, Modular and Accessible UI Components for your React Applications.
 - [**React Router DOM**](https://reactrouter.com/) - A JavaScript framework that lets us handle client and server-side routing in React applications.
+- [**React Hook Form**](https://react-hook-form.com/) - Performant, flexible and extensible forms with easy-to-use validation.
 - [**Zustand**](https://zustand-demo.pmnd.rs/) - A small, fast, and scalable bearbones state management solution.
 
 
 ## Technical Decisions
+   - React Hook Form was used to manage easly the form state and validations.
    - Zustand was used as a State global manager because in the problem we didn't have a backend to persite the data, so to share info between the Home Dynamic Form and Confirmation page, we created useConfirmationDataStore a Zustand store, in this way we have this info without the use of a ContextProvider, only as a Custom hook.
 
 

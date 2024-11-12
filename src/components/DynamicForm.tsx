@@ -11,6 +11,7 @@ export default function DynamicForm({ components }: { components: Component[]}) 
   const {
     register,
     formState: { errors },
+    trigger
   } = methods;
 
   const renderComponent = (component) => {
@@ -47,6 +48,7 @@ export default function DynamicForm({ components }: { components: Component[]}) 
             key={component.props.id}
             {...component.props}
             onClick={component.props.handleClick}
+            trigger={trigger}
             type="button"
           />
         );
