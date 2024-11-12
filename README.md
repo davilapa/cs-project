@@ -86,5 +86,17 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
+4. run tests
+
+```bash
+npm run test
+```
+
+5. run tests and generate the coverage report
+
+```bash
+npm run test:coverage
+```
+
 ### Coverage
 ![coverage](coverage.png)
