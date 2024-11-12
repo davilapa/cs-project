@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Component } from "../types/componentProps.types";
+import { Component, ConfirmData } from "../types/componentProps.types";
 import { fetchFormConfig } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { FieldValues } from "react-hook-form";
@@ -18,7 +18,7 @@ export const useFormConfig = () => {
   const handleSave = async (formData: FieldValues) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      setConfirmData(formData)
+      setConfirmData(formData as ConfirmData)
       navigate("/confirmation");
     } catch (error) {
       console.error("Error submitting form:", error);

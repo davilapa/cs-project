@@ -13,7 +13,7 @@ This a CS Project. [Go to Action!](https://cs-project-two.vercel.app/)
 
 
 ## Technical Decisions
-   - React Hook Form was used to manage easly the form state and validations.
+   - React Hook Form was used to easily manage the form state and validations, avoiding creating by-hand states and how to handle form changes, and form validations that could create rerender problems if we don't pay attention.
    - Zustand was used as a State global manager because in the problem we didn't have a backend to persite the data, so to share info between the Home Dynamic Form and Confirmation page, we created useConfirmationDataStore a Zustand store, in this way we have this info without the use of a ContextProvider, only as a Custom hook.
 
 
