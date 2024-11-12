@@ -19,7 +19,7 @@ export async function fetchFormConfig() {
           id: "lastName",
           label: "Apellido",
           placeholder: "Ingrese su apellido",
-          isRequired: false,
+          isRequired: true,
         },
       },
       {
