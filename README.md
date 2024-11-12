@@ -10,6 +10,11 @@ This a CS Project. [Go to Action!](https://cs-project-two.vercel.app/)
 - [**React Router DOM**](https://reactrouter.com/) - A JavaScript framework that lets us handle client and server-side routing in React applications.
 - [**Zustand**](https://zustand-demo.pmnd.rs/) - A small, fast, and scalable bearbones state management solution.
 
+
+## Technical Decisions
+   - Zustand was used as a State global manager because in the problem we didn't have a backend to persite the data, so to share info between the Home Dynamic Form and Confirmation page, we created useConfirmationDataStore a Zustand store, in this way we have this info without the use of a ContextProvider, only as a Custom hook.
+
+
 ## Files Structure
 
 ```
@@ -58,7 +63,7 @@ This a CS Project. [Go to Action!](https://cs-project-two.vercel.app/)
 - [Node.js 18+](https://nodejs.org/en/).
 - [Git](https://git-scm.com/).
 
-1. [Fork](https://github.com/davilapa/pokedex-app/fork) or [Clone](https://github.com/davilapa/pokedex-app)
+1. [Fork](https://github.com/davilapa/cs-project/fork) or [Clone](https://github.com/davilapa/cs-project)
    this repository and clone it locally
 
 ```bash
